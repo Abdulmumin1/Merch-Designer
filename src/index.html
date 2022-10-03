@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Merch Designer</title>
     <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="../dist/me.css" />
     <script defer src="../app.js"></script>
     <script defer src="../dom-to-image.js"></script>
     <style id="style"></style>
@@ -84,7 +85,7 @@
           <div class="flex flex-1 flex-col align-baseline space-y-1 text-white">
             <textarea
               spellcheck="false"
-              class="p-2 flex-1 rounded-3xl text-black"
+              class="flex-1 rounded-3xl shadow-md bg-gray-800 text-white border-2 border-gray-900 py-6 px-3"
               id="label-text"
             ></textarea>
             <div class="flex space-x-6">
@@ -105,7 +106,7 @@
                 id="font-slider"
                 value="20"
                 max="40"
-                class="rounded-3x w-full"
+                class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl"
               />
             </label>
             <div class="flex space-x-6">
@@ -116,7 +117,7 @@
                   id="top-slider"
                   value="20"
                   max="100"
-                  class="rounded-3x w-full"
+                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl"
                 />
               </label>
               <label
@@ -126,7 +127,7 @@
                   id="right-slider"
                   value="20"
                   max="100"
-                  class="rounded-3x w-full"
+                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl"
                 />
               </label>
             </div>
@@ -144,12 +145,12 @@
               <input
                 type="button"
                 value="text gradient css on code magik"
-                class="rounded-3 bg-gray-300 rounded-3xl p-3"
+                class="text-white p-3 rounded-xl shadow-lg bg-gray-800"
             /></a>
             <label class="text-white text-2xl py-2" for="css">Custom CSS</label>
             <textarea
               spellcheck="false"
-              class="p-3 flex-1 w-100 rounded-3xl shadow"
+              class="flex-1 w-100 rounded-3xl shadow-md bg-gray-800 text-white border-2 border-gray-900 py-6 px-3"
               style="min-height: 120px"
               placeholder="/* #label - text label*/"
               id="css"
