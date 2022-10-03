@@ -56,7 +56,7 @@ const changeLabelFont = (e) => {
 };
 
 const changeTopOffset = (e) => {
-  let colourInp = document.querySelector("#label");
+  let label = document.querySelector("#label-container");
   // let slider = document.querySelector("#font-slider");
   console.log(e.value);
   if (e.value != undefined) {
@@ -67,13 +67,13 @@ const changeTopOffset = (e) => {
 };
 
 const changeRightOffset = (e) => {
-  let colourInp = document.querySelector("#label");
+  let label = document.querySelector("#label-container");
   // let slider = document.querySelector("#font-slider");
   console.log(e.value);
   if (e.value != undefined) {
-    label.style.right = `${e.value}%`;
+    label.style.right = `${100 - e.value}%`;
   } else {
-    label.style.right = `${e.target.value}%`;
+    label.style.right = `${100 - e.target.value}%`;
   }
 };
 const changeLabelText = (e) => {
@@ -82,9 +82,9 @@ const changeLabelText = (e) => {
   let label = document.querySelector("#label");
   // console.log(label.innerText);
   if (e.value != undefined) {
-    label.innerText = e.value.trim();
+    label.innerText = e.value;
   } else {
-    label.innerText = e.target.value.trim();
+    label.innerText = e.target.value;
   }
 };
 const loadCss = (e) => {
@@ -101,4 +101,13 @@ const setCenter = () => {
   let label = document.querySelector("#label");
   label.style.top = `calc(50% - ${label.style.length})px`;
 };
+
+const getImage = (id) => {
+  domtoimage.toPng(document.getElementById(id)).then((dataUrl) => {
+    let image = new Image();
+    image.src = dataUrl;
+    document.body.appendChild(image);
+  });
+};
+
 window.addEventListener("load", startup, false);
