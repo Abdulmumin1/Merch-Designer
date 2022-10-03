@@ -7,6 +7,7 @@
     <title>Merch Designer</title>
     <link rel="stylesheet" href="../dist/output.css" />
     <script defer src="../app.js"></script>
+    <style id="style"></style>
   </head>
   <body class="h-screen">
     <!-- <div
@@ -40,9 +41,9 @@
     </div> -->
     <div class="h-full flex flex-col">
       <div class="flex-1 bg-gray-300 p-10">
-        <div class="mx-auto w-fit lg:h-96">
+        <div class="mx-auto relative overflow-hidden w-fit lg:h-96">
           <p
-            class="relative top-32 text-xl text-center text-lime-500"
+            class="absolute text-xl w-fit text-lime-500"
             draggable="true"
             id="label"
           >
@@ -60,7 +61,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 357.08 379.82"
             version="1.1"
-            class="h-full mx-auto"
+            class="h-full"
           >
             <g id="layer1" transform="translate(-189.9 -222.14)">
               <path
@@ -72,11 +73,57 @@
           </svg>
         </div>
       </div>
-      <div id="controls" class="flex-1 bg-gray-900 text-center p-9">
+      <div id="controls" class="flex-1 bg-gray-900 p-9">
         <div class="flex flex-col space-y-6 lg:flex-row lg:space-x-6">
-          <div class="flex flex-1 align-baseline space-x-3">
-            <input type="text" class="p-3 flex-1 rounded-3xl" id="label-text" />
-            <input type="color" class="" id="label-color" />
+          <div class="flex flex-1 flex-col align-baseline space-y-1 text-white">
+            <textarea
+              spellcheck="false"
+              class="p-2 flex-1 rounded-3xl text-black"
+              id="label-text"
+            ></textarea>
+            <div class="flex space-x-6">
+              <label>
+                Text color
+                <input type="color" class="w-full" id="label-color"
+              /></label>
+              <label>
+                Shirt color
+                <input type="color" class="w-full" id="shirt-color" />
+              </label>
+            </div>
+
+            <label>
+              Font:
+              <input
+                type="range"
+                id="font-slider"
+                value="20"
+                max="40"
+                class="rounded-3x w-full"
+              />
+            </label>
+            <div class="flex space-x-6">
+              <label
+                >Top:
+                <input
+                  type="range"
+                  id="top-slider"
+                  value="20"
+                  max="100"
+                  class="rounded-3x w-full"
+                />
+              </label>
+              <label
+                >Right:
+                <input
+                  type="range"
+                  id="right-slider"
+                  value="20"
+                  max="100"
+                  class="rounded-3x w-full"
+                />
+              </label>
+            </div>
           </div>
 
           <!-- <input
@@ -86,15 +133,17 @@
             class="p-3 flex-1 bg-gray-400 rounded-3xl"
             onchange="changeLabelFont()"
           /> -->
-          <label>
-            Shirt color
-            <input type="color" class="" id="shirt-color" />
-          </label>
-          <input
-            type="button"
-            value="icon"
-            class="p-3 bg-gray-400 flex-1 rounded-3xl"
-          />
+          <div class="flex-1 flex flex-col">
+            <label class="text-white" for="css">Custom css</label>
+            <textarea
+              spellcheck="false"
+              class="p-3 flex-1 w-100 rounded-3xl"
+              placeholder="/* #label - text label*/"
+              id="css"
+            >
+/* #label - text label*/
+            </textarea>
+          </div>
         </div>
       </div>
     </div>

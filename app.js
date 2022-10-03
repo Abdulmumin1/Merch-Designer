@@ -6,12 +6,25 @@ const startup = () => {
   colorSht.addEventListener("input", updateShirtColor, false);
 
   let inp = document.querySelector("#label-text");
-
   inp.addEventListener("input", changeLabelText, false);
+
+  let fontSlider = document.querySelector("#font-slider");
+  fontSlider.addEventListener("input", changeLabelFont, false);
+  let topSlider = document.querySelector("#top-slider");
+  topSlider.addEventListener("input", changeTopOffset, false);
+  let rightSlider = document.querySelector("#right-slider");
+  rightSlider.addEventListener("input", changeRightOffset, false);
+  let css = document.querySelector("#css");
+  css.addEventListener("input", loadCss, false);
 
   changeLabelText(inp);
   updateLabelColor(colourInp);
   updateShirtColor(colorSht);
+  changeLabelFont(fontSlider);
+  changeTopOffset(topSlider);
+  changeRightOffset(rightSlider);
+  loadCss(css);
+  // setCenter();
   //   inp.addEventListener("propertychange", changeLabelText, false);
 };
 
@@ -32,21 +45,60 @@ const updateShirtColor = (e) => {
     label.style.fill = e.target.value;
   }
 };
-const changeLabelFont = () => {
+const changeLabelFont = (e) => {
   let colourInp = document.querySelector("#label");
-  let slider = document.querySelector("#font-slider");
-  //   colourInp.style.fontSize = `${slider.value}px`;
-  console.log(slider.value);
-};
-
-const changeLabelText = (e) => {
-  let label = document.querySelector("#label");
-  console.log(label.innerText);
+  // let slider = document.querySelector("#font-slider");
   if (e.value != undefined) {
-    label.innerText = e.value;
+    label.style.fontSize = `${e.value}px`;
   } else {
-    label.innerText = e.target.value;
+    label.style.fontSize = `${e.target.value}px`;
   }
 };
 
+const changeTopOffset = (e) => {
+  let colourInp = document.querySelector("#label");
+  // let slider = document.querySelector("#font-slider");
+  console.log(e.value);
+  if (e.value != undefined) {
+    label.style.top = `${e.value}%`;
+  } else {
+    label.style.top = `${e.target.value}%`;
+  }
+};
+
+const changeRightOffset = (e) => {
+  let colourInp = document.querySelector("#label");
+  // let slider = document.querySelector("#font-slider");
+  console.log(e.value);
+  if (e.value != undefined) {
+    label.style.right = `${e.value}%`;
+  } else {
+    label.style.right = `${e.target.value}%`;
+  }
+};
+const changeLabelText = (e) => {
+  ue = "20";
+  max = "40";
+  let label = document.querySelector("#label");
+  // console.log(label.innerText);
+  if (e.value != undefined) {
+    label.innerText = e.value.trim();
+  } else {
+    label.innerText = e.target.value.trim();
+  }
+};
+const loadCss = (e) => {
+  let style = document.querySelector("#style");
+  console.log(style.innerHTML);
+  if (e.value != undefined) {
+    style.innerHTML = e.value;
+  } else {
+    style.innerHTML = e.target.value;
+  }
+};
+
+const setCenter = () => {
+  let label = document.querySelector("#label");
+  label.style.top = `calc(50% - ${label.style.length})px`;
+};
 window.addEventListener("load", startup, false);
