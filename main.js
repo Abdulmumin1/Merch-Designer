@@ -7,8 +7,6 @@ import {
   changeRightOffset,
   changeTopOffset,
 } from "./src/app";
-import javascriptLogo from "./javascript.svg";
-import { setupCounter } from "./counter.js";
 
 const select = (e) => {
   return document.querySelector(e);
