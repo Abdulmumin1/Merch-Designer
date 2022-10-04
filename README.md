@@ -42,3 +42,45 @@ design beautiful and amazing merches
 </tbody>
 
 </table>
+
+### Contribution
+
+<ul>
+<li><a href="https://github.com/Abdulmumin1/Merch-Designer/fork">Fork</a> Repo</li>
+<li>Clone your Forked repo</li>
+</ul>
+
+```bash
+git clone https://github.com/<YOURNAME>/Merch-Designer
+```
+
+Navigate to the directory `Merch-Designer`
+
+```bash
+cd Merch-Designer
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start development server
+
+```bash
+npm run dev
+```
+
+Create a new branch
+
+```bash
+git checkout -b <NAME>
+```
+
+<ul>
+<li>Make your changes</li>
+<li>Create Pull Request</li>
+</ul>
+
+### Congratulations! 🎉
