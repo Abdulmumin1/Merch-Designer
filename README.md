@@ -66,10 +66,20 @@ Install dependencies
 npm install
 ```
 
+```bash
+npm install -g commitizen
+```
+
 Start development server
 
 ```bash
 npm run dev
+```
+
+Watch tailwind
+
+```bash
+npm run watch
 ```
 
 Create a new branch
@@ -78,9 +88,19 @@ Create a new branch
 git checkout -b <NAME>
 ```
 
-<ul>
 <li>Make your changes</li>
+<li>Add files you worked on</li>
+
+```bash
+git add </path/to/files>
+```
+
+<li>commit your changes with </li>
+
+```bash
+git cz
+```
+
 <li>Create Pull Request</li>
-</ul>
 
 ### Congratulations! 🎉
