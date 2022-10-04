@@ -37,7 +37,7 @@
     </div> -->
 
     <input
-      class="absolute m-2 text-white p-3 rounded-xl shadow-lg bg-gray-800"
+      class="absolute m-2 text-white p-3 rounded-xl shadow-lg bg-gray-800 pointer"
       type="button"
       value="render"
       id="download"
@@ -92,11 +92,11 @@
             <div class="flex space-x-6">
               <label>
                 Text color
-                <input type="color" class="w-full" id="label-color"
+                <input type="color" class="w-full pointer" id="label-color"
               /></label>
               <label>
                 Shirt color
-                <input type="color" class="w-full" id="shirt-color" />
+                <input type="color" class="w-full pointer" id="shirt-color" />
               </label>
             </div>
 
@@ -107,7 +107,7 @@
                 id="font-slider"
                 value="20"
                 max="40"
-                class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl"
+                class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl pointer"
               />
             </label>
             <div class="flex space-x-6">
@@ -118,7 +118,7 @@
                   id="top-slider"
                   value="20"
                   max="100"
-                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl"
+                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl pointer"
                 />
               </label>
               <label
@@ -128,7 +128,7 @@
                   id="right-slider"
                   value="20"
                   max="100"
-                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl"
+                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl pointer"
                 />
               </label>
             </div>
@@ -146,10 +146,10 @@
               <input
                 type="button"
                 value="text gradient css on code magik"
-                class="text-white p-3 rounded-xl shadow-lg w-full bg-gray-800"
+                class="text-white p-3 rounded-xl shadow-lg w-full bg-gray-800 pointer"
             /></a>
             <label class="text-white py-2" for="css-checkbox"
-              >Custom CSS <input type="checkbox" id="css-checkbox"
+              >Custom CSS <input type="checkbox" id="css-checkbox" class="pointer"
             /></label>
 
             <textarea
@@ -175,7 +175,7 @@
       >
         <div class="h-fit" id="download-image-box"></div>
         <button
-          class="text-white p-3 w-fit rounded-xl shadow-lg bg-gray-800"
+          class="text-white p-3 w-fit rounded-xl shadow-lg bg-gray-800 pointer"
           id="download-btn"
         >
           Download
