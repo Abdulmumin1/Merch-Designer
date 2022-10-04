@@ -10,7 +10,7 @@ import {
   customCSS,
   render,
   download,
-} from "./src/app";
+} from "./src/events";
 import { getImage, downloadImageToStorage } from "./src/download";
 const select = (e) => {
   return document.querySelector(e);
