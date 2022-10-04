@@ -23,5 +23,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "dom-to-image": "^2.6.0"
   }
 }

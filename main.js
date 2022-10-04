@@ -8,8 +8,9 @@ import {
   changeTopOffset,
   ShowCSSBox,
   customCSS,
+  download,
 } from "./src/app";
-
+import { getImage } from "./src/download";
 const select = (e) => {
   return document.querySelector(e);
 };
@@ -37,6 +38,7 @@ const startupEvents = () => {
   changeRightOffset(rightSlider, labelContainer);
   ShowCSSBox(cssCheckBox, textArea);
   customCSS(textArea, customUserStyle);
+  download(select("#download"), () => getImage(select("#playground")));
 };
 
 window.addEventListener("load", startupEvents, false);

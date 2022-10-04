@@ -116,17 +116,13 @@ export const customCSS = (triggerer, reactor) => {
   triggerer.addEventListener("input", updatetext, false);
 };
 
+export const download = (triggerer, func) => {
+  triggerer.addEventListener("click", func, false);
+};
+
 const setCenter = () => {
   let label = document.querySelector(element);
   label.style.top = `calc(50% - ${label.style.length})px`;
-};
-
-const getImage = (id) => {
-  domtoimage.toPng(document.getElementById(id)).then((dataUrl) => {
-    let image = new Image();
-    image.src = dataUrl;
-    document.body.appendChild(image);
-  });
 };
 
 // window.addEventListener("load", startup, false);
