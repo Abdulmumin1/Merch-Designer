@@ -8,9 +8,10 @@ import {
   changeTopOffset,
   ShowCSSBox,
   customCSS,
+  render,
   download,
 } from "./src/app";
-import { getImage } from "./src/download";
+import { getImage, downloadImageToStorage } from "./src/download";
 const select = (e) => {
   return document.querySelector(e);
 };
@@ -38,7 +39,16 @@ const startupEvents = () => {
   changeRightOffset(rightSlider, labelContainer);
   ShowCSSBox(cssCheckBox, textArea);
   customCSS(textArea, customUserStyle);
-  download(select("#download"), () => getImage(select("#playground")));
+  render(select("#download"), () =>
+    getImage(
+      select("#playground"),
+      select("#download-area"),
+      select("#download-image-box")
+    )
+  );
+  download(select("#download-btn"), () =>
+    downloadImageToStorage(select("#download-image"))
+  );
 };
 
 window.addEventListener("load", startupEvents, false);

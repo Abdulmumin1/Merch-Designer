@@ -8,7 +8,7 @@
     <script defer type="module" src="/main.js"></script>
     <style id="u-style"></style>
   </head>
-  <body class="h-screen bg-gray-300">
+  <body class="h-screen">
     <!-- <div id="design-area" class="mx-auto flex w-screen p-24">
       <div id="merch flex-1" style="height: 50vh">
         <svg
@@ -39,12 +39,12 @@
     <input
       class="absolute m-2 text-white p-3 rounded-xl shadow-lg bg-gray-800"
       type="button"
-      value="download"
+      value="render"
       id="download"
     />
 
     <!-- <div class="counter">kdfskldjlk</div> -->
-    <div class="h-full flex flex-col lg:flex-row">
+    <div class="h-full flex flex-col lg:flex-row bg-gray-300">
       <div class="flex-1 p-10" id="playground">
         <div class="mx-auto relative overflow-hidden w-fit lg:h-96 h-full">
           <div
@@ -166,6 +166,20 @@
             </textarea>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="bg-gray-300 p-10 hidden" id="download-area">
+      <div
+        class="shadow-2xl m-10 rounded-3xl flex flex-col items-center p-10"
+        id="download-card"
+      >
+        <div class="h-fit" id="download-image-box"></div>
+        <button
+          class="text-white p-3 w-fit rounded-xl shadow-lg bg-gray-800"
+          id="download-btn"
+        >
+          Download
+        </button>
       </div>
     </div>
     <!-- <div id="controls" class="container flex flex-row  bg-slate-500">

@@ -116,10 +116,13 @@ export const customCSS = (triggerer, reactor) => {
   triggerer.addEventListener("input", updatetext, false);
 };
 
-export const download = (triggerer, func) => {
+export const render = (triggerer, func) => {
   triggerer.addEventListener("click", func, false);
 };
-
+export const download = (triggerer, func) => {
+  console.log("clicked");
+  triggerer.addEventListener("click", func, false);
+};
 const setCenter = () => {
   let label = document.querySelector(element);
   label.style.top = `calc(50% - ${label.style.length})px`;
