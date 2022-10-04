@@ -31,7 +31,12 @@ design beautiful and amazing merches
 <br>Javascript
 
 </td>
+<td align="Center" width="25%">
 
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img src="https://img.icons8.com/color/144/000000/tailwindcss.png" width="36" height="36" alt="TailWind" /></a>
+<br>Tailwind
+
+</td>
 </tr>
 
 </tbody>
