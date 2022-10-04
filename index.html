@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Merch Designer</title>
-    <link rel="stylesheet" href="../dist/output.css" />
-    <link rel="stylesheet" href="../dist/me.css" />
-    <script defer src="../app.js"></script>
-    <script defer src="../dom-to-image.js"></script>
+    <script defer type="module" src="/main.js"></script>
     <style id="style"></style>
   </head>
-  <body class="h-screen">
+  <body class="h-screen bg-gray-300">
     <!-- <div id="design-area" class="mx-auto flex w-screen p-24">
       <div id="merch flex-1" style="height: 50vh">
         <svg
@@ -46,11 +43,13 @@
       id="download"
       onclick="getImage('playground')"
     />
-    <div class="h-full flex flex-col">
-      <div class="flex-1 bg-gray-300 p-10" id="playground">
+
+    <!-- <div class="counter">kdfskldjlk</div> -->
+    <div class="h-full flex flex-col lg:flex-row">
+      <div class="flex-1 p-10" id="playground">
         <div class="mx-auto relative overflow-hidden w-fit lg:h-96 h-full">
           <div
-            class="absolute text-center text-xl w-fit text-lime-500"
+            class="absolute text-center w-fit"
             draggable="true"
             id="label-container"
           >
@@ -80,13 +79,16 @@
           </svg>
         </div>
       </div>
-      <div id="controls" class="flex-1 bg-gray-900 p-9">
-        <div class="flex flex-col lg:flex-row lg:space-x-6">
+      <div
+        id="controls"
+        class="bg-gray-900 p-9 m-6 lg:bg-gray-300 shadow-2xl rounded-3xl"
+      >
+        <div class="flex space-y-7 flex-col">
           <div class="flex flex-1 flex-col align-baseline space-y-1 text-white">
             <textarea
               spellcheck="false"
               class="flex-1 rounded-3xl shadow-md bg-gray-800 text-white border-2 border-gray-900 py-6 px-3"
-              id="label-text"
+              id="label-text-input"
             ></textarea>
             <div class="flex space-x-6">
               <label>
@@ -145,12 +147,15 @@
               <input
                 type="button"
                 value="text gradient css on code magik"
-                class="text-white p-3 rounded-xl shadow-lg bg-gray-800"
+                class="text-white p-3 rounded-xl shadow-lg w-full bg-gray-800"
             /></a>
-            <label class="text-white text-2xl py-2" for="css">Custom CSS</label>
+            <label class="text-white py-2" for="css-checkbox"
+              >Custom CSS <input type="checkbox" id="css-checkbox"
+            /></label>
+
             <textarea
               spellcheck="false"
-              class="flex-1 w-100 rounded-3xl shadow-md bg-gray-800 text-white border-2 border-gray-900 py-6 px-3"
+              class="flex-1 w-100 rounded-3xl shadow-md bg-gray-800 text-white border-2 border-gray-900 py-4 px-3 hidden"
               style="min-height: 120px"
               placeholder="/* #label - text label*/"
               id="css"
