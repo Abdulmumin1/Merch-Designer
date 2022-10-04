@@ -15,7 +15,13 @@
     "url": "git+https://github.com/Abdulmumin1/Merch-Designer.git"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "tailwindcss": "^3.1.8",
     "vite": "^3.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

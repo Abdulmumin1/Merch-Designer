@@ -94,14 +94,26 @@ export const changeLabelText = (triggerer, reactor) => {
   };
   triggerer.addEventListener("input", updatetext, false);
 };
-const loadCss = (e, element) => {
-  let style = document.querySelector(element);
-  console.log(style.innerHTML);
-  if (e.value != undefined) {
-    style.innerHTML = e.value;
-  } else {
-    style.innerHTML = e.target.value;
-  }
+
+export const ShowCSSBox = (triggerer, reactor) => {
+  let textArea = reactor;
+  const updatetext = (e) => {
+    if (e.target.checked) {
+      textArea.classList.remove("hidden");
+    } else {
+      textArea.classList.add("hidden");
+    }
+  };
+  triggerer.addEventListener("input", updatetext, false);
+};
+
+export const customCSS = (triggerer, reactor) => {
+  let label = reactor;
+
+  const updatetext = (e) => {
+    label.innerText = e.target.value;
+  };
+  triggerer.addEventListener("input", updatetext, false);
 };
 
 const setCenter = () => {
