@@ -554,7 +554,9 @@ video {
 .container {
   width: 100%;
 }
-
+.pointer {
+  cursor: pointer;
+}
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
