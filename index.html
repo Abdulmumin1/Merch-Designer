@@ -10,21 +10,22 @@
   </head>
   <body class="h-screen">
     <input
-      class="absolute m-2 text-white p-3 rounded-xl shadow-lg bg-gray-800 pointer"
+      class="absolute m-2 text-white p-3 rounded-xl shadow-white shadow-md bg-gray-800 cursor-pointer"
       type="button"
       value="render"
       id="download"
     />
 
-    <div class="h-full flex flex-col lg:flex-row bg-gray-300">
+    <div class="h-full flex flex-col lg:flex-row bg-gray-800">
       <div class="flex-1 p-10" id="playground">
         <div class="mx-auto relative overflow-hidden w-fit h-full">
           <div
-            class="absolute text-center w-fit"
+            class="absolute top-1/3 text-gray-600 text-center w-fit"
             draggable="true"
             id="label-container"
+            style="right: 40%"
           >
-            <p id="label"></p>
+            <p id="label">Merch Maker</p>
           </div>
           <!-- shirt svg -->
           <svg
@@ -43,7 +44,7 @@
           >
             <g id="layer1" transform="translate(-189.9 -222.14)">
               <path
-                class="fill-black"
+                class="fill-black stroke-gray-800"
                 id="shirt"
                 d="m345.79 601.06c-10.725-0.4181-26.925-1.4782-36-2.3556-36.648-3.5435-34.346-3.0691-39-8.0383-2.317-2.474-2.5266-3.524-2.8627-14.342-0.1995-6.4198 0.16063-16.622 0.80029-22.672 1.2282-11.617 3.2325-93.777 3.4396-141 0.12597-28.718-0.84859-40.024-4.0946-47.5l-1.5197-3.5-10.779 11.314c-8.651 9.0806-11.342 11.329-13.631 11.392-2.7841 0.0763-12.81-4.3264-22.853-10.036-2.75-1.5633-7.25-4.1199-10-5.6812s-7.1802-3.9712-9.845-5.3553c-10.356-5.3791-12.211-12.254-5.9078-21.899 2.0609-3.154 3.9734-5.9596 4.25-6.2346 0.27655-0.275 1.7633-2.8572 3.3039-5.7382 3.9894-7.4605 16.324-26.328 19.449-29.75 0.6875-0.75286 1.25-1.6299 1.25-1.9489 0-0.92598 5.3864-8.1413 15.812-21.18 8.1974-10.253 10.843-12.824 17.188-16.71 4.125-2.5261 10.65-5.7559 14.5-7.1774s9.475-3.7378 12.5-5.1473 8.7521-3.8555 12.727-5.4356c7.2337-2.8756 25.935-12.331 27.723-14.016 0.5225-0.49255 1.9675-0.89554 3.211-0.89554 1.2436 0 3.1216-0.92367 4.1734-2.0526 3.239-3.4767 6.9346-3.8269 14.254-1.3507 10.086 3.4123 31.272 5.1042 43.657 3.4864 5.3652-0.70083 12.26-2.1312 15.321-3.1787 6.9889-2.391 11.003-2.412 14.049-0.0733 1.3117 1.0071 8.0099 4.561 14.885 7.8976 13.095 6.355 35.078 16.773 38.5 18.245 24.772 10.658 28.188 13.639 41.208 35.96 3.0688 5.2612 6.4117 10.781 7.4286 12.265 1.0169 1.4847 4.0469 7.1097 6.7334 12.5s8.6 17.001 13.141 25.801c5.0261 9.7397 8.2291 17.127 8.1862 18.879-0.0663 2.7077-4.4587 8.6207-6.4039 8.6207-0.45803 0-2.7363 1.2097-5.0629 2.6882-4.5225 2.874-12.71 7.3733-24.585 13.511-10.176 5.2593-14.99 5.2579-20.013-0.006-1.9978-2.0939-4.7519-5.3564-6.1202-7.25-2.9538-4.0876-9.9078-10.943-11.101-10.943-1.5445 0-2.8754 3.7483-5.0303 14.167-3.1668 15.311-3.7738 26.78-2.77 52.333 0.49696 12.65 1.3267 41.9 1.8438 65s1.4181 53.283 2.0022 67.073c0.75847 17.906 0.75354 25.958-0.0173 28.169-1.6058 4.6063-6.4522 6.4404-20.94 7.9248-48.703 4.9902-52.257 5.256-68.5 5.1236-8.25-0.067-23.775-0.4644-34.5-0.8826z"
               />
@@ -56,7 +57,7 @@
       <!-- Controls -->
       <div
         id="controls"
-        class="bg-gray-900 p-9 m-6 lg:bg-gray-300 shadow-2xl rounded-3xl"
+        class="bg-gray-900 p-9 m-6 shadow-lg rounded-3xl shadow-white"
       >
         <div class="flex space-y-7 flex-col">
           <div class="flex flex-1 flex-col align-baseline space-y-1 text-white">
@@ -70,13 +71,17 @@
                 Text color
                 <input
                   type="color"
-                  class="w-full pointer"
+                  class="w-full cursor-pointer"
                   id="label-color"
                   value="#fff"
               /></label>
               <label>
                 Shirt color
-                <input type="color" class="w-full pointer" id="shirt-color" />
+                <input
+                  type="color"
+                  class="w-full cursor-pointer"
+                  id="shirt-color"
+                />
               </label>
             </div>
 
@@ -87,7 +92,7 @@
                 id="font-slider"
                 value="20"
                 max="40"
-                class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl pointer"
+                class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl cursor-pointer"
               />
             </label>
             <div class="flex space-x-6">
@@ -98,7 +103,7 @@
                   id="top-slider"
                   value="20"
                   max="100"
-                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl pointer"
+                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl cursor-pointer"
                 />
               </label>
               <label
@@ -108,7 +113,7 @@
                   id="right-slider"
                   value="20"
                   max="100"
-                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl pointer"
+                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl cursor-pointer"
                 />
               </label>
             </div>
@@ -120,16 +125,16 @@
               <input
                 type="button"
                 value="text gradient css on code magik"
-                class="text-white p-3 rounded-xl shadow-lg w-full bg-gray-800 pointer"
+                class="text-white p-3 rounded-xl shadow-lg w-full bg-gray-800 cursor-pointer"
             /></a>
             <label class="text-white py-2" for="css-checkbox"
               >Custom CSS
-              <input type="checkbox" id="css-checkbox" class="pointer"
+              <input type="checkbox" id="css-checkbox" class="cursor-pointer"
             /></label>
 
             <textarea
               spellcheck="false"
-              class="flex-1 w-100 rounded-3xl shadow-md bg-gray-800 border-2 border-gray-900 py-4 px-3 hidden"
+              class="flex-1 w-100 rounded-3xl text-gray-300 shadow-md bg-gray-800 border-2 border-gray-900 py-4 px-3 hidden"
               style="min-height: 120px"
               placeholder="/* #label - text label*/"
               id="css"
@@ -146,14 +151,19 @@
 
     <!-- Download Area -->
     <!-- Hidden until render button is pressed -->
-    <div class="bg-gray-300 p-10 hidden" id="download-area">
+    <div class="bg-gray-900 p-10 hidden" id="download-area">
       <div
-        class="shadow-2xl m-10 rounded-3xl flex flex-col items-center p-10"
+        class="shadow-lg m-10 shadow-white rounded-3xl flex flex-col items-center p-3 h-full"
         id="download-card"
       >
-        <div class="h-fit" id="download-image-box"></div>
         <button
-          class="text-white p-3 w-fit rounded-xl shadow-lg bg-gray-800 pointer"
+          onclick="document.getElementById('download-area').classList.add('hidden')"
+        >
+          X
+        </button>
+        <div class="h-full first:rounded-3xl" id="download-image-box"></div>
+        <button
+          class="text-white p-3 w-fit rounded-xl shadow-lg bg-gray-800 cursor-pointer"
           id="download-btn"
         >
           <a id="download-link">Download</a>
