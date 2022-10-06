@@ -1,46 +1,11 @@
-// const startup = () => {
-//   let colourInp = document.querySelector("#label-color");
-//   colourInp.addEventListener("input", updateLabelColor, false);
-
-//   let colorSht = document.querySelector("#shirt-color");
-//   colorSht.addEventListener("input", updateShirtColor, false);
-
-//   let inp = document.querySelector("#label-text");
-//   inp.addEventListener("input", changeLabelText, false);
-
-//   let fontSlider = document.querySelector("#font-slider");
-//   fontSlider.addEventListener("input", changeLabelFont, false);
-//   let topSlider = document.querySelector("#top-slider");
-//   topSlider.addEventListener("input", changeTopOffset, false);
-//   let rightSlider = document.querySelector("#right-slider");
-//   rightSlider.addEventListener("input", changeRightOffset, false);
-//   let css = document.querySelector("#css");
-//   css.addEventListener("input", loadCss, false);
-
-//   changeLabelText(inp);
-//   updateLabelColor(colourInp);
-//   updateShirtColor(colorSht);
-//   changeLabelFont(fontSlider);
-//   changeTopOffset(topSlider);
-//   changeRightOffset(rightSlider);
-//   loadCss(css);
-//   // setCenter();
-//   //   inp.addEventListener("propertychange", changeLabelText, false);
-// };
-
-export const updateLabelColor = (triggerer, reactor) => {
+export const updateLabelColorEvent = (triggerer, reactor) => {
   const changecolor = (e) => {
-    if (e.target != undefined) {
-      reactor.style.color = e.target.value;
-    } else {
-      reactor.style.color = reactor.value;
-    }
+    reactor.style.color = e.target.value;
   };
   triggerer.addEventListener("input", changecolor, false);
-  changecolor(reactor);
 };
 
-export const updateShirtColor = (triggerer, reactor) => {
+export const updateShirtColorEvent = (triggerer, reactor) => {
   const shirt = reactor;
   const changecolor = (e) => {
     shirt.style.fill = e.target.value;
@@ -48,45 +13,30 @@ export const updateShirtColor = (triggerer, reactor) => {
   triggerer.addEventListener("input", changecolor, false);
 };
 
-export const changeLabelFont = (triggerer, reactor) => {
+export const changeLabelFontEvent = (triggerer, reactor) => {
   let label = reactor;
   const updatefont = (e) => {
-    if (e.target != undefined) {
-      label.style.fontSize = `${e.target.value}px`;
-    } else {
-      label.style.fontSize = `${e.value}px`;
-    }
+    label.style.fontSize = `${e.target.value}px`;
   };
   triggerer.addEventListener("input", updatefont, false);
-  updatefont(reactor);
 };
 
-export const changeTopOffset = (triggerer, reactor) => {
+export const changeTopOffsetEvent = (triggerer, reactor) => {
   let label = reactor;
   const updatetop = (e) => {
-    if (e.target != undefined) {
-      label.style.top = `${e.target.value}%`;
-    } else {
-      label.style.top = `${e.value}%`;
-    }
+    label.style.top = `${e.target.value}%`;
   };
   triggerer.addEventListener("input", updatetop, false);
-  updatetop(reactor);
 };
 
-export const changeRightOffset = (triggerer, reactor) => {
+export const changeRightOffsetEvent = (triggerer, reactor) => {
   let label = reactor;
   const updateright = (e) => {
-    if (e.target != undefined) {
-      label.style.right = `${100 - e.target.value}%`;
-    } else {
-      label.style.right = `${100 - e.value}%`;
-    }
+    label.style.right = `${100 - e.target.value}%`;
   };
   triggerer.addEventListener("input", updateright, false);
-  updateright(reactor);
 };
-export const changeLabelText = (triggerer, reactor) => {
+export const changeLabelTextEvent = (triggerer, reactor) => {
   let label = reactor;
 
   const updatetext = (e) => {
@@ -95,7 +45,7 @@ export const changeLabelText = (triggerer, reactor) => {
   triggerer.addEventListener("input", updatetext, false);
 };
 
-export const ShowCSSBox = (triggerer, reactor) => {
+export const ShowCSSBoxEvent = (triggerer, reactor) => {
   let textArea = reactor;
   const updatetext = (e) => {
     if (e.target.checked) {
@@ -107,7 +57,7 @@ export const ShowCSSBox = (triggerer, reactor) => {
   triggerer.addEventListener("input", updatetext, false);
 };
 
-export const customCSS = (triggerer, reactor) => {
+export const customCSSEvent = (triggerer, reactor) => {
   let label = reactor;
 
   const updatetext = (e) => {
@@ -116,16 +66,10 @@ export const customCSS = (triggerer, reactor) => {
   triggerer.addEventListener("input", updatetext, false);
 };
 
-export const render = (triggerer, func) => {
+export const renderEvent = (triggerer, func) => {
   triggerer.addEventListener("click", func, false);
 };
-export const download = (triggerer, func) => {
+export const downloadEvent = (triggerer, func) => {
   console.log("clicked");
   triggerer.addEventListener("click", func, false);
 };
-const setCenter = () => {
-  let label = document.querySelector(element);
-  label.style.top = `calc(50% - ${label.style.length})px`;
-};
-
-// window.addEventListener("load", startup, false);

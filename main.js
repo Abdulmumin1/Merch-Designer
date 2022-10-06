@@ -1,15 +1,15 @@
 import "./style.css";
 import {
-  updateLabelColor,
-  updateShirtColor,
-  changeLabelFont,
-  changeLabelText,
-  changeRightOffset,
-  changeTopOffset,
-  ShowCSSBox,
-  customCSS,
-  render,
-  download,
+  updateLabelColorEvent,
+  updateShirtColorEvent,
+  changeLabelFontEvent,
+  changeLabelTextEvent,
+  changeRightOffsetEvent,
+  changeTopOffsetEvent,
+  ShowCSSBoxEvent,
+  customCSSEvent,
+  renderEvent,
+  downloadEvent,
 } from "./src/events";
 import { getImage, downloadImageToStorage } from "./src/download";
 const select = (e) => {
@@ -30,24 +30,28 @@ const startupEvents = () => {
   let cssCheckBox = select("#css-checkbox");
   let textArea = select("#css");
   let customUserStyle = select("#u-style");
-  changeLabelText(labelInput, label);
-  updateLabelColor(labelColorInp, label);
-  updateShirtColor(shirtColorInp, shirt);
-  changeLabelFont(fontSlider, label);
 
-  changeTopOffset(topSlider, labelContainer);
-  changeRightOffset(rightSlider, labelContainer);
-  ShowCSSBox(cssCheckBox, textArea);
-  customCSS(textArea, customUserStyle);
-  render(select("#download"), () =>
+  // startup event listeners
+  changeLabelTextEvent(labelInput, label);
+  updateLabelColorEvent(labelColorInp, label);
+  updateShirtColorEvent(shirtColorInp, shirt);
+  changeLabelFontEvent(fontSlider, label);
+  changeTopOffsetEvent(topSlider, labelContainer);
+  changeRightOffsetEvent(rightSlider, labelContainer);
+  ShowCSSBoxEvent(cssCheckBox, textArea);
+  customCSSEvent(textArea, customUserStyle);
+
+  renderEvent(select("#download"), () =>
     getImage(
       select("#playground"),
       select("#download-area"),
-      select("#download-image-box")
+      select("#download-image-box"),
+      select("#download-link")
     )
   );
-  download(select("#download-btn"), () =>
-    downloadImageToStorage(select("#download-image"))
+
+  downloadEvent(select("#download-btn"), () =>
+    downloadImageToStorage(select("#download-link"))
   );
 };
 

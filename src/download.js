@@ -1,5 +1,5 @@
 import domtoimage from "dom-to-image";
-export const getImage = (id, downloadArea, downloadImage) => {
+export const getImage = (id, downloadArea, downloadImage, downloadLink) => {
   console.log("ama download ");
 
   domtoimage.toPng(id).then((dataUrl) => {
@@ -9,13 +9,12 @@ export const getImage = (id, downloadArea, downloadImage) => {
     downloadImage.appendChild(image);
     downloadArea.classList.remove("hidden");
     window.location.href = "#download-card";
+
+    // get link ready for download
+
+    downloadLink.href = dataUrl;
+    downloadLink.download = "merch.png";
   });
 };
 
-export const downloadImageToStorage = (image) => {
-  let link = document.createElement("a");
-  // link.href = image.toDataURL;
-  // link.download = "merch.png";
-  // link.click();
-  // console.log("imagesifjdklsjklds");
-};
+export const downloadImageToStorage = (link) => link.click();
