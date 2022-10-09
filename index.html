@@ -20,13 +20,14 @@
       <div class="flex-1 p-10" id="playground">
         <div class="mx-auto relative overflow-hidden w-fit h-full">
           <div
-            class="absolute top-1/3 text-gray-600 text-center w-fit"
+            class="absolute text-gray-600 text-center w-fit flex"
             draggable="true"
             id="label-container"
             style="right: 40%"
           >
-            <p id="label">Merch Maker</p>
+            <p id="label" class="cursor-pointer">Merch Maker</p>
           </div>
+          <img id="icon" class="absolute top-1/3 w-1/5" draggable="true" />
           <!-- shirt svg -->
           <svg
             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -55,95 +56,93 @@
       </div>
 
       <!-- Controls -->
-      <div
-        id="controls"
-        class="bg-gray-900 p-9 m-6 shadow-lg rounded-3xl shadow-white"
-      >
-        <div class="flex space-y-7 flex-col">
-          <div class="flex flex-1 flex-col align-baseline space-y-1 text-white">
-            <textarea
-              spellcheck="false"
-              class="flex-1 rounded-3xl shadow-md bg-gray-800 text-white border-2 border-gray-900 py-6 px-3"
-              id="label-text-input"
-            ></textarea>
-            <div class="flex space-x-6">
-              <label>
-                Text color
-                <input
-                  type="color"
-                  class="w-full cursor-pointer"
-                  id="label-color"
-                  value="#fff"
-              /></label>
-              <label>
-                Shirt color
-                <input
-                  type="color"
-                  class="w-full cursor-pointer"
-                  id="shirt-color"
-                />
-              </label>
-            </div>
-
-            <label>
-              Font:
-              <input
-                type="range"
-                id="font-slider"
-                value="20"
-                max="40"
-                class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl cursor-pointer"
-              />
-            </label>
-            <div class="flex space-x-6">
-              <label
-                >Top:
-                <input
-                  type="range"
-                  id="top-slider"
-                  value="20"
-                  max="100"
-                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl cursor-pointer"
-                />
-              </label>
-              <label
-                >Right:
-                <input
-                  type="range"
-                  id="right-slider"
-                  value="20"
-                  max="100"
-                  class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl cursor-pointer"
-                />
-              </label>
-            </div>
-          </div>
-
-          <!-- Custom CSS -->
-          <div class="flex-1 flex flex-col">
-            <a href="https://code-magic.vercel.app" class="w-full">
-              <input
-                type="button"
-                value="text gradient css on code magik"
-                class="text-white p-3 rounded-xl shadow-lg w-full bg-gray-800 cursor-pointer"
-            /></a>
-            <label class="text-white py-2" for="css-checkbox"
-              >Custom CSS
-              <input type="checkbox" id="css-checkbox" class="cursor-pointer"
-            /></label>
-
-            <textarea
-              spellcheck="false"
-              class="flex-1 w-100 rounded-3xl text-gray-300 shadow-md bg-gray-800 border-2 border-gray-900 py-4 px-3 hidden"
-              style="min-height: 120px"
-              placeholder="/* #label - text label*/"
-              id="css"
+      <div id="controls" class="h-full bg-red-400">
+        <div
+          class="bg-gray-900 p-9 m-6 shadow-lg h-fit rounded-3xl shadow-white"
+        >
+          <div class="flex space-y-4 flex-col">
+            <div
+              class="flex flex-1 flex-col align-baseline space-y-3 text-white"
             >
+              <textarea
+                spellcheck="false"
+                class="flex-1 rounded-3xl shadow-md bg-gray-800 text-white border-2 border-gray-900 py-6 px-3"
+                id="label-text-input"
+              ></textarea>
+              <div class="flex justify-between items-center">
+                <label>
+                  text
+                  <input
+                    type="color"
+                    class="w-full cursor-pointer"
+                    id="label-color"
+                    value="#fff"
+                /></label>
+                <label>
+                  shirt
+                  <input
+                    type="color"
+                    class="w-full cursor-pointer"
+                    id="shirt-color"
+                  />
+                </label>
+
+                <label
+                  >icon
+                  <input
+                    class="text-sm w-full text-gray-900 bg-gray-700 rounded-lg p-3 cursor-pointer"
+                    id="iconArea"
+                    type="file"
+                  />
+                </label>
+              </div>
+
+              <ul
+                class="text-sm font-medium text-center text-gray-500 rounded-lg divide-x divide-gray-200 shadow flex"
+              >
+                <li class="w-full">
+                  <input
+                    type="button"
+                    id="labelTab"
+                    class="inline-block p-4 w-full text-gray-900 rounded-l-lg focus:ring-gray-800 focus:outline-none bg-gray-700 focus:bg-gray-700 cursor-pointer"
+                    value="Label"
+                  />
+                </li>
+
+                <li class="w-full">
+                  <input
+                    type="button"
+                    id="iconTab"
+                    class="inline-block p-4 w-full bg-gray-700 text-gray-900 rounded-r-lg focus:ring-4 focus:ring-gray-800 focus:outline-none cursor-pointer"
+                    value="icon"
+                  />
+                </li>
+              </ul>
+
+              <div id="move"></div>
+            </div>
+
+            <!-- Custom CSS -->
+            <div class="flex-1 flex flex-col">
+              <label class="text-white py-2" for="css-checkbox"
+                >Custom CSS
+                <input type="checkbox" id="css-checkbox" class="cursor-pointer"
+              /></label>
+
+              <textarea
+                spellcheck="false"
+                class="flex-1 w-100 rounded-3xl text-gray-300 shadow-md bg-gray-800 border-2 border-gray-900 py-4 px-3 hidden"
+                style="min-height: 100px"
+                placeholder="/* #label - text label*/"
+                id="css"
+              >
 /* #label - text label */
 #label{
 
 }
-            </textarea>
+            </textarea
+              >
+            </div>
           </div>
         </div>
       </div>
