@@ -1,4 +1,5 @@
 export const updateLabelColorEvent = (triggerer, reactor) => {
+  // change color of the reactor when event is triggered by triggerer
   const changecolor = (e) => {
     reactor.style.color = e.target.value;
   };
@@ -6,6 +7,7 @@ export const updateLabelColorEvent = (triggerer, reactor) => {
 };
 
 export const updateShirtColorEvent = (triggerer, reactor) => {
+  // change color of the reactor when event is triggered by triggerer
   const shirt = reactor;
   const changecolor = (e) => {
     shirt.style.fill = e.target.value;
@@ -14,6 +16,7 @@ export const updateShirtColorEvent = (triggerer, reactor) => {
 };
 
 export const changeLabelFontEvent = (triggerer, reactor) => {
+  // change font of the reactor when event is triggered by triggerer
   let label = reactor;
   const updatefont = (e) => {
     label.style.fontSize = `${e.target.value}px`;
@@ -66,32 +69,30 @@ export const customCSSEvent = (triggerer, reactor) => {
   triggerer.addEventListener("input", updatetext, false);
 };
 
-export const iconControlsListener = (triggerer, reactor, label) => {
-  const updatehtml = (e) => {
+export const iconControlsListener = (triggerer, reactor, labelControl) => {
+  const updatecontrol = (e) => {
     reactor.classList.remove("hidden");
-    label.classList.add("hidden");
+    labelControl.classList.add("hidden");
   };
-  triggerer.addEventListener("click", updatehtml, false);
+  triggerer.addEventListener("click", updatecontrol, false);
 };
 
-export const labelControlsListener = (triggerer, reactor, icon) => {
+export const labelControlsListener = (triggerer, reactor, iconControl) => {
   // show text controls and hide icon controls
   const updatehtml = (e) => {
     reactor.classList.remove("hidden");
-    icon.classList.add("hidden");
+    iconControl.classList.add("hidden");
   };
   triggerer.addEventListener("click", updatehtml, false);
 };
 
 export const addIconEvent = (triggerer, reactor) => {
   const updateImage = (e) => {
-    let image = new Image();
+    if (!e.target.value) return;
     console.log(e.target.value);
-    image.src = URL.createObjectURL(e.target.files[0]);
-    reactor.src = image.src;
+    reactor.src = URL.createObjectURL(e.target.files[0]);
   };
   triggerer.addEventListener("click", updateImage, false);
-  // triggerer.disabled = true;
 };
 
 export const renderEvent = (triggerer, func) => {
@@ -109,20 +110,4 @@ export const changeIconSizeListener = (triggerer, reactor) => {
     label.style.width = `${e.target.value}%`;
   };
   triggerer.addEventListener("input", updatefont, false);
-};
-
-export const changeIconTopOffsetListener = (triggerer, reactor) => {
-  let label = reactor;
-  const updatetop = (e) => {
-    label.style.top = `${e.target.value}%`;
-  };
-  triggerer.addEventListener("input", updatetop, false);
-};
-
-export const changeIconRightOffsetListener = (triggerer, reactor) => {
-  let label = reactor;
-  const updateright = (e) => {
-    label.style.right = `${100 - e.target.value}%`;
-  };
-  triggerer.addEventListener("input", updateright, false);
 };

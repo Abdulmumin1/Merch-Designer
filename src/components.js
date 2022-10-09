@@ -1,6 +1,7 @@
 export const iconControls = () => {
   return `
-  <div class='flex flex-col' id="iconControls">
+  <div class='flex flex-col hidden' id="iconControls">
+    <p>Icon</p>
     <label>
         size:
         <input
@@ -13,7 +14,7 @@ export const iconControls = () => {
         </label>
         <div class="flex space-x-6">
         <label
-            >Top:
+            >top:
             <input
             type="range"
             id="icon-top-slider"
@@ -23,7 +24,7 @@ export const iconControls = () => {
             />
         </label>
         <label
-            >Right:
+            >right:
             <input
             type="range"
             id="icon-right-slider"
@@ -32,12 +33,14 @@ export const iconControls = () => {
             class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl cursor-pointer"
             />
         </label>
+    </div>
     </div>`;
 };
 
 export const labelControls = () => {
   return `
-  <div class='flex flex-col' id="labelControls">
+  <div class='flex flex-col ' id="labelControls">
+  <p>Text</p>
   <label>
       Font:
       <input
@@ -69,5 +72,7 @@ export const labelControls = () => {
           class="rounded-3x w-full bg-gray-800 range shadow-inner rounded-3xl cursor-pointer"
         />
       </label>
+    
+      </div>
     </div>`;
 };
