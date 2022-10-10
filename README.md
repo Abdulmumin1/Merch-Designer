@@ -1,7 +1,28 @@
 # Merch-Designer
 
 <img src='assets/index.png'/>
-design beautiful and amazing merches
+
+Design beautiful and amazing merches with our application and join to our community. 
+
+### 👕 Look some examples of our merches
+</br>
+<div style="display:flex; align-items: center;">
+     <div style="flex:1">
+          <img src="assets/merch-1.png"/>
+     </div>
+     <div style="flex:1;padding-left:10px;">
+          <img src="assets/merch-2.png" />
+     </div>
+</div>
+<div style="display:flex; align-items: center;">
+     <div style="flex:1">
+          <img src="assets/merch-3.png"/>
+     </div>
+     <div style="flex:1;padding-left:10px;">
+          <img src="assets/merch-4.png" />
+     </div>
+</div>
+</br>
 
 ### ⚒️ Languages / Tools
 
