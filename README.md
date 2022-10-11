@@ -6,22 +6,9 @@ Design beautiful and amazing merches with our application and join to our commun
 
 ### 👕 Look some examples of our merches
 </br>
-<div style="display:flex; align-items: center;">
-     <div style="flex:1">
-          <img src="assets/merch-1.png"/>
-     </div>
-     <div style="flex:1;padding-left:10px;">
-          <img src="assets/merch-2.png" />
-     </div>
-</div>
-<div style="display:flex; align-items: center;">
-     <div style="flex:1">
-          <img src="assets/merch-3.png"/>
-     </div>
-     <div style="flex:1;padding-left:10px;">
-          <img src="assets/merch-4.png" />
-     </div>
-</div>
+
+![merch](https://user-images.githubusercontent.com/90936639/195135654-9f8f3d6c-3316-4464-9226-bf2af4dbf58c.png)
+
 </br>
 
 ### ⚒️ Languages / Tools
