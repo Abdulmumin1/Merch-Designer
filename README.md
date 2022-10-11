@@ -2,7 +2,7 @@
 
 <img src='assets/index.png'/>
 
-Design beautiful and amazing merches with our application and join to our community. 
+Design beautiful and amazing merches `superfast`. 
 
 ### ⚒️ Languages / Tools
 
