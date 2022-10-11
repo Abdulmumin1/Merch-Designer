@@ -4,13 +4,6 @@
 
 Design beautiful and amazing merches with our application and join to our community. 
 
-### 👕 Look some examples of our merches
-</br>
-
-![merch](https://user-images.githubusercontent.com/90936639/195135654-9f8f3d6c-3316-4464-9226-bf2af4dbf58c.png)
-
-</br>
-
 ### ⚒️ Languages / Tools
 
 <table>
@@ -112,3 +105,8 @@ git cz
 <li>Create Pull Request</li>
 
 ### Congratulations! 🎉
+
+--------
+### 👕 Made with Merch-Designer :eyes:
+
+![merch](https://user-images.githubusercontent.com/90936639/195135654-9f8f3d6c-3316-4464-9226-bf2af4dbf58c.png)
